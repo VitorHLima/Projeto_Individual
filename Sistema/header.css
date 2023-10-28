@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+#header {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+}
+#logo {
+    width: 70%;
+    display: flex;
+    margin: 2.5%;
+}
+#header_links {
+    width: 30%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+#header_links a {
+    text-decoration: none;
+    color: white;
+}
+#link_login {
+    margin: 0 7% 0 7%;
+}
