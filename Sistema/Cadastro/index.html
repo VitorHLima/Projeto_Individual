@@ -19,7 +19,11 @@
         <div class="logo">PROJETO DISNEY</div>
         <div class="header_links">
           <a href="../inicial/index.html">Pagina Inicial</a>
+<<<<<<< HEAD
           <a href="../login/index.html" class="link_login">Login</a>
+=======
+          <a href="#" class="link_login">Login</a>
+>>>>>>> 9045b5e1aeab0e7231829d980cb152cb87f118ab
           <a href="#">Cadastre-se</a>
         </div>
       </div>
@@ -81,7 +85,10 @@
       var emailRepita = input_email_repita.value;
       var senha = input_senha.value;
       var senhaRepita = input_senha_repita.value;
+<<<<<<< HEAD
       var habilitar = true;
+=======
+>>>>>>> 9045b5e1aeab0e7231829d980cb152cb87f118ab
 
       if (
         nickname == "" ||
@@ -112,6 +119,7 @@
           alert("Senha tem que ter pelo menos 8 digitos");
           return false;
         } else {
+<<<<<<< HEAD
           const poolBancoDados = mysql
             .createPool(
               //Conexão com o banco para fazer o insert
@@ -129,6 +137,10 @@
               "INSERT INTO registro (nickname, email, senha) VALUES (?, ?, ? )"
             );
           }
+=======
+          alert("Cadastro finalizado");
+          document.location.href = "../inicial/index.html";
+>>>>>>> 9045b5e1aeab0e7231829d980cb152cb87f118ab
         }
       }
     }
