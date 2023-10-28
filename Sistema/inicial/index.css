@@ -1,0 +1,132 @@
+#div_inicial_mickey {
+    background-size: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    margin-top: -0.2%;
+    background: url('../imagem/fundoMickey.png') center ;
+}
+#div_texto_inicial {
+    width: 48%;
+    padding: 17% 0 0 7%;
+    color: white;
+}
+#div_texto_inicial h1 {
+    font-size: 32px;
+}
+#div_texto_inicial p {
+    font-size: 16px;
+}
+#div_inicial_reiLeao{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    background: url('../imagem/iloveimg-upscaled/reiLeao.png') no-repeat;
+    background-size: 100%;
+    max-width: 100%;
+    margin-left: -0.12%;
+}
+#texto_reiLeao {
+    padding: 10% 0 0 8%;
+    width: 70%;
+    color: white;
+}
+#texto_reiLeao p {
+    font-size: 18px;
+}
+#button_reiLeao {
+    background-color: #16171C;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+}
+#div_button_reiLeao {
+    width: 92%;
+    height: auto;
+    padding: 0 0 0 8%;
+}
+#inicial_inspiracao {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    background: url('../imagem/iloveimg-upscaled/fundoMulan.png');
+    background-size: 100%;
+}
+#inicial_inspiracao h1 {
+    color: white;
+    margin-top: 2%;
+}
+#texto_mulan {
+    width: 50%;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+}
+#div_img_mulan  {
+    position: absolute;
+   display: flex;
+   margin-bottom: -35%;
+   margin-left: -55%;
+}
+#img_mulan {
+    width: 600px;
+    height: 350px;
+}
+#div_agradecimentos {
+    width: 100%;
+    height: 700px;
+    background: url('../imagem/iloveimg-upscaled/fundoUrsoTotal.png');
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-size: 100%;
+}
+#texto_agradecimento {
+    color :white;
+    width: 50%;
+    padding: 4% 3% 0 0;
+    font-size: 18px;
+}
+#titulo_agradecimento {
+    text-align: right;
+    padding: 0 3% 0 0;
+}
+#div_dificuldades_superacao {
+    width: 100% ;
+    margin-top: -0.4%;
+    height: 700px;
+    background: url('../imagem/fundoElemento.png') no-repeat;
+    background-size: 1400px;
+    display: flex;
+}
+#div_dificuldade {
+    color: white;
+    margin: 9% 0 0 7%;
+}
+#div_superacao {
+    color: white;
+    margin: 9% 0 0 35%;
+}
+#div_footer {
+    background: url('../imagem/fundoToy.png');
+    width: 100%;
+    height: 700px;
+    display: flex;
+    padding: 5% 0 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+#div_footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+}
