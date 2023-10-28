@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,300;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="div_principal_cadastro">
+      <div class="header" style="background-color: #16171c">
+        <div class="logo">PROJETO DISNEY</div>
+        <div class="header_links">
+          <a href="../inicial/index.html">Pagina Inicial</a>
+          <a href="#" class="link_login">Login</a>
+          <a href="#">Cadastre-se</a>
+        </div>
+      </div>
+      <div id="div_separacao_conteudo">
+        <div id="div_texto_cadastro">
+          <h1>FAÇA O CADASTRO COM SUA CONTA, <br />E VENHA FAZER HISTORIA!</h1>
+          <br /><br />
+          <p>
+            Caso não tenha uma conta, se cadastre-se e venha fazer<br />parte
+            dessa historia com nós!
+          </p>
+        </div>
+        <div id="div_formulario_cadastro">
+          <div id="div_formulario">
+            <br />
+            <h2>CADASTRAR</h2>
+            <br />
+            <div class="texto_formulario">
+              <h4>Nickname</h4>
+            </div>
+            <input type="text" class="input_formulario" id="input_nickname" />
+            <div class="texto_formulario">
+              <h4>E-mail</h4>
+            </div>
+            <input type="email" class="input_formulario" id="input_email" />
+            <div class="texto_formulario">
+              <h4>Repita E-mail</h4>
+            </div>
+            <input
+              type="email"
+              class="input_formulario"
+              id="input_email_repita"
+            />
+            <div class="texto_formulario">
+              <h4>Senha</h4>
+            </div>
+            <input type="password" class="input_formulario" id="input_senha" />
+            <div class="texto_formulario">
+              <h4>Repita Senha</h4>
+            </div>
+            <input
+              type="password"
+              class="input_formulario"
+              id="input_senha_repita"
+            />
+
+            <button id="formulario_cadastro_entrar" onclick="Validar()">
+              CRIAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function Validar() {
+      var nickname = input_nickname.value;
+      var email = input_email.value;
+      var emailRepita = input_email_repita.value;
+      var senha = input_senha.value;
+      var senhaRepita = input_senha_repita.value;
+
+      if (
+        nickname == "" ||
+        email == "" ||
+        emailRepita == "" ||
+        senha == "" ||
+        senhaRepita == ""
+      ) {
+        alert("Insira todos os dados");
+      } else {
+        if (nickname.length < 8) {
+          alert("Nickname tem que ser mais de 8 digitos");
+          return false;
+        }
+        if (email != emailRepita) {
+          alert("Insira E-mails iguais");
+          return false;
+        }
+        if (senha != senhaRepita) {
+          alert("Insira Senha iguais");
+          return false;
+        }
+        if (!email.endsWith(".com")) {
+          alert("E-mail tem que terminar com '.com'");
+          return false;
+        }
+        if (senha.length < 8) {
+          alert("Senha tem que ter pelo menos 8 digitos");
+          return false;
+        } else {
+          alert("Cadastro finalizado");
+          document.location.href = "../inicial/index.html";
+        }
+      }
+    }
+  </script>
+</html>
