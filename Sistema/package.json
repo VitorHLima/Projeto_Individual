@@ -1,0 +1,15 @@
+{
+  "name": "node_modulos",
+  "version": "1.0.0",
+  "description": "BACK projeto",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "test": "a"
+  },
+  "keywords": [
+    "chave"
+  ],
+  "author": "Vitor",
+  "license": "ISC"
+}

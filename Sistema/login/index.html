@@ -21,7 +21,6 @@
           <a href="../inicial/index.html">Pagina Inicial</a>
           <a href="#" class="link_login">Login</a>
           <a href="../Cadastro/index.html">Cadastre-se</a>
-          <a href="#">Cadastre-se</a>
         </div>
       </div>
       <div id="div_separacao_conteudo">
@@ -43,17 +42,39 @@
             <div class="texto_formulario">
               <h4>E-mail</h4>
             </div>
-            <input type="email" class="input_formulario" /><br />
+            <input
+              type="email"
+              class="input_formulario"
+              id="input_email"
+            /><br />
             <div class="texto_formulario">
               <h4>Senha</h4>
             </div>
-            <input type="password" class="input_formulario" /><br />
+            <input
+              type="password"
+              class="input_formulario"
+              id="input_senha"
+            /><br />
             <a href="http://">Cadastre-se</a>
             <br />
-            <button id="formulario_login_entrar">ENTRAR</button>
+            <button id="formulario_login_entrar" onclick="Validar()">
+              ENTRAR
+            </button>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    function Validar() {
+      var email = input_email.value;
+      var senha = input_senha.value;
+
+      if (email == "" || senha == "") {
+        alert("Insira todos os dados");
+      } else {
+        alert("Seja bem-vindo novamente!");
+      }
+    }
+  </script>
 </html>

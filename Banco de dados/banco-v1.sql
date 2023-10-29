@@ -8,6 +8,8 @@ CREATE TABLE Usuario (
     email varchar(50),
     senha varchar(50)
 );
+select * from Usuario;
+truncate Usuario;
 CREATE TABLE Historias (
 	idHistorias int primary key,
     titulo varchar(100),

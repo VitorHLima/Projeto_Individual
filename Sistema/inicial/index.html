@@ -19,17 +19,12 @@
         <div class="logo">PROJETO DISNEY</div>
         <div class="header_links">
           <a href="#">Pagina Inicial</a>
-<<<<<<< HEAD
           <a href="../login/index.html" class="link_login">Login</a>
           <a href="../Cadastro/index.html">Cadastre-se</a>
-=======
-          <a href="#" class="link_login">Login</a>
-          <a href="#">Cadastre-se</a>
->>>>>>> 9045b5e1aeab0e7231829d980cb152cb87f118ab
         </div>
       </div>
       <div id="div_inicial_mickey">
-        <div id="div_texto_inicial">
+        <div id="div_texto_inicial" class="hidden">
           <h1>
             VENHA FAZER PARTE DESSA HISTORIA! <br />A MAIOR MAGIA É O SORRISO!
           </h1>
@@ -44,7 +39,7 @@
         </div>
       </div>
       <div id="div_inicial_reiLeao">
-        <div id="texto_reiLeao">
+        <div id="texto_reiLeao" class="hidden">
           <h1>SOBRE O PROJETO</h1>
           <br />
           <p>
@@ -66,7 +61,7 @@
       </div>
       <div id="inicial_inspiracao">
         <h1>INSPIRAÇÃO DO PROJETO</h1>
-        <div id="texto_mulan">
+        <div id="texto_mulan" class="hidden">
           <br /><br />
           <p>
             Quando eu era criança, sempre assistia os filmes da Disney com o
@@ -91,7 +86,7 @@
         </div>
       </div>
       <div id="div_agradecimentos">
-        <div id="texto_agradecimento">
+        <div id="texto_agradecimento" class="hidden">
           <div id="titulo_agradecimento">
             <h1>AGRADECIMENTOS</h1>
           </div>
@@ -121,4 +116,18 @@
       </div>
     </div>
   </body>
+  <script>
+    var Observar = new IntersectionObserver(function ScroolView(paramentro) {
+      paramentro.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("show");
+        } else {
+          entrada.target.classList.remove("show");
+        }
+      });
+    });
+    var elementos = document.querySelectorAll(".hidden");
+
+    elementos.forEach((elementos) => Observar.observe(elementos));
+  </script>
 </html>

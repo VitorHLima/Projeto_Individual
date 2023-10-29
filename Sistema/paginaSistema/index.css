@@ -1,0 +1,125 @@
+#div_principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#header_sistema {
+    background-color: #16171C;
+    
+}
+#div_incial_sistema {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    flex-direction: column;
+    background: url('../imagem/fundoDivertidamente.jpg') no-repeat;
+    background-size: 100%;
+    padding: 4% 0 0 0;
+}
+#div_secundaria_sistema {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    flex-direction: column;
+    background: url('../imagem/incriveisFundo.jpg');
+    background-size: 100%;
+    padding: 4% 0 0 0;
+}
+#div_secundaria_sistema h1 {
+    color: white;
+    margin-top: 4%;
+}
+#div_incial_sistema h1 {
+    color: white;
+    margin-top: 5%;
+}
+#div_todas_historias {
+    width: 70%;
+    height: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+.divs_todas_historias_separacao {
+    width: 34%;
+    height: 80%;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2%;
+}
+#divs_todas_historias_separacao_meio {
+    margin: 0 2% 0 2%;
+}
+.divs_todas_historias_separacao a {
+    color: black;
+}
+#div_incial_sistema button {
+    width: 20%;
+    padding: 1%;
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: black;
+    border: 0;
+    margin-bottom: 3%;
+}
+#div_incial_sistema button:hover {
+    width: 20%;
+    padding: 1%;
+    color: black;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#div_secundaria_sistema button {
+    width: 20%;
+    padding: 1%;
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: black;
+    border: 0;
+}
+#div_secundaria_sistema button:hover {
+    width: 20%;
+    padding: 1%;
+    color: black;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#div_terceiro_sistema {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 500px;
+    color: white;
+    flex-direction: column;
+    background: url('../imagem/fundoCarros.jpg') no-repeat;
+    background-size: 100%;
+    padding: 4% 0 0 0;
+}
+#div_grafico {
+    width: 47%;
+    background-color: white;
+    height: 70%;
+    border-radius: 4px;
+    padding: 0.5%;
+}
+#myChart {
+    width: 100%;
+    height: 100%;
+
+}
