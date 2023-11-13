@@ -2,10 +2,14 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina de Login</title>
+
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="../header.css" />
+    <script src="/public/js/sessao.js"></script>
+    <link rel="stylesheet" href="Sistema/header.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,12 +22,19 @@
       <div class="header" style="background-color: #16171c">
         <div class="logo">PROJETO DISNEY</div>
         <div class="header_links">
-          <a href="../inicial/index.html">Pagina Inicial</a>
+          <a href="inicial.html">Pagina Inicial</a>
           <a href="#" class="link_login">Login</a>
-          <a href="../Cadastro/index.html">Cadastre-se</a>
+          <a href="cadastro.html">Cadastre-se</a>
         </div>
       </div>
-      <div id="div_separacao_conteudo">
+      <div
+        id="div_separacao_conteudo"
+        style="
+          background: url('../imagem/fundoUP.jpg');
+          background-size: 100%;
+          height: 651px;
+        "
+      >
         <div id="div_texto_login">
           <h1>
             FAÇA LOGIN COM SUA CONTA, E CONTINUE A FAZER HISTORIA COM <br />A
@@ -55,9 +66,9 @@
               class="input_formulario"
               id="input_senha"
             /><br />
-            <a href="http://">Cadastre-se</a>
+            <a href="cadastro.html">Cadastre-se</a>
             <br />
-            <button id="formulario_login_entrar" onclick="Validar()">
+            <button id="formulario_login_entrar" onclick="entrar()">
               ENTRAR
             </button>
           </div>
@@ -66,15 +77,183 @@
     </div>
   </body>
   <script>
-    function Validar() {
-      var email = input_email.value;
-      var senha = input_senha.value;
+    function entrar() {//Função para entrar no sistema
+      var emailVar = input_email.value;//pegando valores do compo inserido
+      var senhaVar = input_senha.value;//pegando valores do compo inserido
 
-      if (email == "" || senha == "") {
-        alert("Insira todos os dados");
-      } else {
-        alert("Seja bem-vindo novamente!");
+      if (emailVar == "" || senhaVar == "") {//Validando compo inserido
+        alert("Insira os os campos");//Alert para avisar a falta de dados nos campos
+        return false;//Vai retornar false, para não continuar o if
+      } else {//Se tudo estiver certo, ele vai entrar 
+        console.log("FORM LOGIN: ", emailVar);//Mostrado o login inserido
+        console.log("FORM SENHA: ", senhaVar);//Mostrando a senha inserido
+
+        fetch("/usuarios/autenticar", {//Requisição para autenticar se o usuario existe no sistema
+          method: "POST",//Requisição do metodo POST
+          headers: {
+            "Content-Type": "application/json",//Informando para o servidor que vão ser mandados valores com o JSON
+          },
+          body: JSON.stringify({//Transformando os dados pegados em string para ser recebidos por outras telas atraves do servidor
+            emailServer: emailVar,//Transformando em objeto para o JSON
+            senhaServer: senhaVar,//Transformando em objeto para o JSON
+          }),
+        })
+          .then(function (resposta) {//Ele vai tentar conectar e mandar o dados com a resposta como parametro da requisição
+            console.log("ESTOU NO THEN DO entrar()!");//Entrou na requisição
+
+            if (resposta.ok) {//Se a resposta for ok, ele vai logar na conta
+              console.log(resposta);//Exibir a resposta
+              alert('Seja bem-vindo novamente!')//Mostrar para o usuario o alert
+              resposta.json().then((json) => {//Vai transfortmar a resposta em JSON
+                console.log(json);//Exibir a resposta no console log
+                console.log(JSON.stringify(json));//Transformando a resposta em string
+                sessionStorage.EMAIL_USUARIO = json.email;//Mandando os dados da sessão do usuario em JSON para outra pagin
+                sessionStorage.NOME_USUARIO = json.nome;//Mandando os dados da sessão do usuario em JSON para outra pagin
+                sessionStorage.ID_USUARIO = json.idUsuario;//Mandando os dados da sessão do usuario em JSON para outra pagin
+                sessionStorage.HISTORIAS = JSON.stringify(json.Historias);//Mandando os dados da sessão do usuario em JSON para outra pagin
+
+                setTimeout(() => {//Função para transferir o usuario com tempo
+                  window.location = "sistema.html";//local onde sera transferido
+                }, "2000")// de 2 segundos
+              });
+            } else {//Se não tiver conta
+              alert('E-mail ou senha incorretos')//Ira exibir para o usuario
+              console.log("Houve um erro ao tentar realizar o login!");//Ira exibir no console log
+
+              resposta.text().then((texto) => {//Vai mostrar a resposta da requisição
+                console.error(texto);//Exibir o erro
+              });
+            }
+          })
+          .catch(function (erro) {//Pegar o erro como função e como parametro
+            console.log(erro);//Mostrar em console log o erro que deu na requisição
+          });
       }
     }
   </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins";
+    }
+    .header {
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      display: flex;
+      position: fixed;
+      flex-direction: row;
+      z-index: 1;
+    }
+    .logo {
+      width: 70%;
+      display: flex;
+      margin: 2.5%;
+    }
+    .header_links {
+      width: 30%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+    .header_links a {
+      text-decoration: none;
+      color: white;
+    }
+    .link_login {
+      margin: 0 7% 0 7%;
+    }
+    #div_principal_login {
+      background-image: url("fundoUP.jpg");
+      background-size: 100%;
+      height: 651px;
+      display: flex;
+    }
+    #div_formulario {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    #div_separacao_conteudo {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+    #div_texto_login {
+      width: 47%;
+      padding: 17% 0 0 7%;
+      color: white;
+    }
+    #div_texto_login p {
+      font-size: 19px;
+    }
+    #div_formulario_login {
+      width: 35%;
+      height: 100%;
+      margin: 0% 0 0 2%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    #div_formulario {
+      margin-top: 20%;
+      width: 80%;
+      height: 70%;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(10px);
+      border: 1px solid #cccccc61;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      color: white;
+      flex-direction: column;
+    }
+    .input_formulario {
+      width: 70%;
+      padding: 4px;
+      border: 0;
+      margin-top: 4px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .input_formulario:focus {
+      outline: 0;
+    }
+
+    #formulario_login_entrar {
+      width: 38%;
+      padding: 4px;
+      color: white;
+      border-radius: 7px;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0.333);
+      backdrop-filter: blur(10px);
+      border: 1px solid #cccccc61;
+    }
+    #formulario_login_entrar:hover {
+      background-color: rgb(255, 255, 255);
+      backdrop-filter: blur(10px);
+      color: black;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    #div_formulario a {
+      text-decoration: none;
+      color: white;
+    }
+    .texto_formulario {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      padding: 0 0 0 30%;
+    }
+  </style>
 </html>

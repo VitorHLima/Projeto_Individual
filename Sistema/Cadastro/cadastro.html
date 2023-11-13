@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="../index.js"></script>
+    <script src="/public/js/sessao.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,300;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="div_principal_cadastro">
+      <div class="header" style="background-color: #16171c">
+        <div class="logo">PROJETO DISNEY</div>
+        <div class="header_links">
+          <a href="../inicial/index.html">Pagina Inicial</a>
+          <a href="index.html" class="link_login">Login</a>
+          <a href="#" class="">Cadastre-se</a>
+        </div>
+      </div>
+      <div id="div_separacao_conteudo">
+        <div id="div_texto_cadastro">
+          <h1>FAÇA O CADASTRO COM SUA CONTA, <br />E VENHA FAZER HISTORIA!</h1>
+          <br /><br />
+          <p>
+            Caso não tenha uma conta, se cadastre-se e venha fazer<br />parte
+            dessa historia com nós!
+          </p>
+        </div>
+        <div id="div_formulario_cadastro">
+          <div id="div_formulario">
+            <!-- <form action="/usuarios/cadastrar" method="POST"> -->
+            <br />
+            <h2>CADASTRAR</h2>
+            <br />
+
+            <div class="texto_formulario">
+              <h4>Nickname</h4>
+            </div>
+            <input
+              type="text"
+              class="input_formulario"
+              id="input_nickname"
+              name="nickname"
+              required
+            />
+            <div class="texto_formulario">
+              <h4>E-mail</h4>
+            </div>
+            <input
+              type="email"
+              class="input_formulario"
+              id="input_email"
+              name="email"
+              required
+            />
+            <div class="texto_formulario">
+              <h4>Repita E-mail</h4>
+            </div>
+            <input
+              type="email"
+              class="input_formulario"
+              id="input_email_repita"
+              required
+            />
+
+            <div class="texto_formulario">
+              <h4>Senha</h4>
+            </div>
+            <input
+              type="password"
+              class="input_formulario"
+              id="input_senha"
+              name="senha"
+              required
+            />
+            <div class="texto_formulario">
+              <h4>Repita Senha</h4>
+            </div>
+            <input
+              type="password"
+              class="input_formulario"
+              id="input_senha_repita"
+              required
+            />
+
+            <button id="formulario_cadastro_entrar" onclick="cadastrar()">
+              CRIAR
+            </button>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function cadastrar() {
+      var nome = input_nickname.value;
+      var email = input_email.value;
+      var emailRepita = input_email_repita.value;
+      var senha = input_senha.value;
+      var senhaRepita = input_senha_repita.value;
+
+      if (
+        nome == "" ||
+        email == "" ||
+        emailRepita == "" ||
+        senha == "" ||
+        senhaRepita == ""
+      ) {
+        alert("Insira todos os dados");
+        return false
+      } else {
+        if (nome.length < 8) {
+          alert("Nickname tem que ser mais de 8 digitos");
+          return false
+        }
+        if (email != emailRepita) {
+          alert("Insira E-mails iguais");
+          return false
+        }
+        if (senha != senhaRepita) {
+          alert("Insira Senha iguais");
+          return false
+        }
+        if (!email.endsWith(".com")) {
+          alert("E-mail tem que terminar com '.com'");
+          return false
+        }
+        if (senha.length < 8) {
+          alert("Senha tem que ter pelo menos 8 digitos");
+          return false
+        }
+        if (email.indexOf("@") < 0) {
+          alert("email sem o @");
+          return false
+        } else {
+          // Enviando o valor da nova input
+          fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              nomeServer: nome,
+              emailServer: email,
+              senhaServer: senha,
+            }),
+          })
+            .then(function (resposta) {
+              console.log("resposta: ", resposta);
+
+              if (resposta.ok) {
+                alert("Cadastro realizado com sucesso!");
+                setTimeout(() => {
+                  window.location = "index.html";
+                }, "2000");
+              } else {
+                alert('Houve um erro ao tentar realizar o cadastro!')
+                throw "Houve um erro ao tentar realizar o cadastro!";
+              }
+            })
+            .catch(function (resposta) {
+              console.log(`#ERRO: ${resposta}`);
+            });
+        }
+      }
+    }
+  </script>
+</html>

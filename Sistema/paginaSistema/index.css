@@ -1,13 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+.my_texto {
+    overflow: auto;
+    height: 80%;
+}
+
+.my_texto::-webkit-scrollbar {
+    width: 8px;
+}
+
+.my_texto::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.my_texto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.my_texto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.header {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    z-index: 1;
+}
+
+.logo {
+    width: 70%;
+    display: flex;
+    margin: 2.5%;
+}
+
+.header_links {
+    width: 30%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_links a {
+    text-decoration: none;
+    color: white;
+}
+
+.link_login {
+    margin: 0 7% 0 7%;
+}
+
+#separacao_global_historia {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-y: auto;
+    white-space: nowrap
+}
+
+#div_id_scrow {
+    width: 90%;
+    height: 90%;
+    overflow-x: auto;
+}
+
+.div_historias_globais {
+    width: 25%;
+    border-radius: 20px;
+    height: 65%;
+    padding: 2%;
+    display: inline-block;
+    margin: 7% 2% 0 1%;
+    border: 1px solid black;
+    background-color: white;
+    overflow: scroll;
+    overflow-x: scroll;
+    flex-wrap: wrap;
+    white-space: wrap;
+    text-align: center;
+}
+
+.div_historias_globais p {
+    max-width: 100%;
+
+}
+
+#div_id_scrow::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+#div_id_scrow::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+#div_id_scrow::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#div_id_scrow::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
 #div_principal {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
 #header_sistema {
-    background-color: #16171C;
-    
+    background-color: #16171c;
 }
+
 #div_incial_sistema {
     width: 100%;
     display: flex;
@@ -15,10 +133,11 @@
     justify-content: center;
     height: 700px;
     flex-direction: column;
-    background: url('../imagem/fundoDivertidamente.jpg') no-repeat;
+    background: url("fundoDivertidamente.jpg") no-repeat;
     background-size: 100%;
     padding: 4% 0 0 0;
 }
+
 #div_secundaria_sistema {
     width: 100%;
     display: flex;
@@ -26,27 +145,30 @@
     justify-content: center;
     height: 700px;
     flex-direction: column;
-    background: url('../imagem/incriveisFundo.jpg');
+    background: url("incriveisFundo.jpg");
     background-size: 100%;
     padding: 4% 0 0 0;
 }
+
 #div_secundaria_sistema h1 {
     color: white;
     margin-top: 4%;
 }
+
 #div_incial_sistema h1 {
     color: white;
     margin-top: 5%;
 }
+
 #div_todas_historias {
     width: 70%;
     height: 60%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3%;
 }
+
 .divs_todas_historias_separacao {
     width: 34%;
     height: 80%;
@@ -54,13 +176,19 @@
     border-radius: 20px;
     text-align: center;
     padding: 2%;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
 }
+
 #divs_todas_historias_separacao_meio {
     margin: 0 2% 0 2%;
 }
+
 .divs_todas_historias_separacao a {
     color: black;
 }
+
 #div_incial_sistema button {
     width: 20%;
     padding: 1%;
@@ -71,6 +199,7 @@
     border: 0;
     margin-bottom: 3%;
 }
+
 #div_incial_sistema button:hover {
     width: 20%;
     padding: 1%;
@@ -81,7 +210,8 @@
     border: 1px solid black;
     cursor: pointer;
 }
-#div_secundaria_sistema button {
+
+.button_minhasHistorias {
     width: 20%;
     padding: 1%;
     color: white;
@@ -90,7 +220,8 @@
     background-color: black;
     border: 0;
 }
-#div_secundaria_sistema button:hover {
+
+.button_minhasHistorias:hover {
     width: 20%;
     padding: 1%;
     color: black;
@@ -100,6 +231,7 @@
     border: 1px solid black;
     cursor: pointer;
 }
+
 #div_terceiro_sistema {
     width: 100%;
     display: flex;
@@ -107,10 +239,11 @@
     height: 500px;
     color: white;
     flex-direction: column;
-    background: url('../imagem/fundoCarros.jpg') no-repeat;
+    background: url("fundoCarros.jpg") no-repeat;
     background-size: 100%;
     padding: 4% 0 0 0;
 }
+
 #div_grafico {
     width: 47%;
     background-color: white;
@@ -118,8 +251,176 @@
     border-radius: 4px;
     padding: 0.5%;
 }
+
 #myChart {
     width: 100%;
     height: 100%;
+}
 
+#div_pop_up_historias {
+    position: absolute;
+    width: 60%;
+    height: 550px;
+    border-radius: 10px;
+    padding: 4%;
+    display: none;
+    text-align: center;
+    justify-content: center;
+}
+
+#div_principal_form {
+    height: 93%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 1%;
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    border: 1px solid black;
+}
+
+#div_principal_form form {
+    width: 100%;
+    height: 100%;
+    justify-content: left;
+    text-align: left;
+    padding: 2% 0 1% 4%;
+}
+
+#input_titulo {
+    padding: 0.6%;
+    width: 60%;
+    border-radius: 7px;
+}
+
+textarea {
+    width: 80%;
+    height: 42%;
+    padding: 1%;
+    border-radius: 7px;
+}
+
+.button_classificacao {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0;
+    background: url("estrela-preto.png");
+}
+
+.button_classificacao:hover {
+    cursor: pointer;
+}
+
+#Sair {
+    width: 50px;
+    height: 64px;
+    position: absolute;
+    left: 85%;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    background-size: 100%;
+    background: url("sair.png");
+}
+
+#cadastrar_historia_pop-up {
+    width: 20%;
+    padding: 0.5%;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: black;
+    border: 0;
+}
+
+#div_principal_minhas_historias {
+    width: 40%;
+    padding: 4%;
+    display: none;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: auto;
+    border: 1px solid black;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+}
+
+#div_principal_tabela {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Sair2 {
+    background-color: #07070745;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: none;
+    border: 0;
+    right: 5%;
+    cursor: pointer;
+    top: 5%;
+    background: url("sair20.png");
+}
+
+#Mais_historias {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 14px;
+}
+
+#div_titulo {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#h4_meio {
+    margin: 0 15% 0 0%;
+    width: 100%;
+}
+
+#div_valores_tabela {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 6%;
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+    border-bottom: 2px solid black;
+}
+
+#Inserir_historias {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    width: 100%;
+}
+
+#h5_meio {
+    margin: 0 15% 0 15%;
+    width: 100%;
+    text-align: justify;
+    overflow: auto;
+}
+
+#input_classificacao1:active {
+    background-image: url("estrela-amarelo.png");
 }

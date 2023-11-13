@@ -1,0 +1,50 @@
+CREATE DATABASE aula_01;
+DROP database aula_01;
+USE aula_01;
+CREATE TABLE Paciente (
+	idPaciente int primary key auto_increment,
+    nome varchar(45)
+);
+CREATE TABLE Medico (
+	idMedico int primary key auto_increment,
+    nome varchar(45),
+    salario decimal(10,2)
+);
+CREATE TABLE Consulta (
+	idConsulta int ,
+    fkPaciente int,
+    foreign key (fkPaciente) references Paciente(idPaciente),
+    fkMedico int, 
+    foreign key (fkMedico) references Medico(idMedico),
+    dtConsulta DATETIME default current_timestamp,
+    primary key(fkPaciente, idConsulta, fkMedico)
+) auto_increment = 100;
+
+INSERT INTO Paciente VALUES
+(1, 'Vitor Hugo'),(2, 'Victor Nunes'),(3, 'Gustavo Silva');
+
+INSERT INTO Medico VALUES
+(1, 'Frizza', '2500.50'),(2, 'Victor Nunes', '1000.10'),(3, 'Gustavo Silva', '35000.00');
+
+INSERT INTO Consulta VALUES 
+(101, 1, 1, '2020-08-17'),
+(102, 2, 2, '1950-10-07'),
+(103, 3, 1, '2000-04-10');
+
+SELECT * FROM Consulta join Medico on idMedico = fkMedico join Paciente on idPaciente = fkPaciente;
+
+SELECT m.nome, p.nome, c.dtConsulta FROM Consulta as c JOIN Medico as m on c.fkMedico = m.idMedico join Paciente as p on c.fkPaciente = p.idPaciente;  
+
+SELECT CONCAT('O Paciente ', p.nome, ' tem uma consulta marcada no dia ', c.dtConsulta, ' com o medico ', m.nome) as Consultas from 
+Consulta as c join Medico as m on c.fkMedico = m.idMedico join Paciente as p on c.fkPaciente = p.idPaciente; 
+
+SELECT min(salario) from Medico;
+SELECT max(salario) from Medico;
+SELECT sum(salario) from Medico;
+SELECT AVG(salario) from Medico;
+SELECT round(avg(salario),3) from Medico;
+SELECT truncate(avg(salario),3) from Medico;
+SELECT distinct salario from Medico;
+SELECT COUNT(*) from Consulta;
+
+SELECT COUNT(*), dtConsulta FROM Consulta WHERE dtConsulta is null group by dtConsulta; 

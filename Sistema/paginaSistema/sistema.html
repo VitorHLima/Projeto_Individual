@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina do sistema</title>
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="../public/js/sessao.js"></script>
+    <script src="/public/js/alerta.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,300;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../index.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body id="body_id">
+    <div id="div_principal">
+      <div class="header" id="header_sistema">
+        <div class="logo">
+          USER:
+          <h4 id="logo"></h4>
+        </div>
+        <button onclick="AbrirAlbum()" id="button_album">Playlist</button>
+        <div id="album_disney">
+          <button id="Sair3" onclick="Sair3()"></button>
+          <iframe width="550" height="200" id="iframe_video" src="https://www.youtube.com/embed/videoseries?si=QqsAAIuCAdK76BpA&amp;list=PLE3QI0lc3cfEzUKSzYHgAHyDNphzfR878" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="header_links">
+          <a href="../inicial/index.html">Pagina Inicial</a>
+          <a href="index.html" class="link_login">Login</a>
+          <a href="index.html" onclick="limparSessao()">SAIR</a>
+        </div>
+    
+      </div>
+      <div id="div_incial_sistema"><br>
+        <h1>TODAS AS HISTORIAS</h1>
+       <div id="separacao_global_historia">
+        <div id="div_id_scrow">
+      </div>
+       </div>
+      </div>
+      <div id="div_secundaria_sistema">
+        <h1>MINHAS HISTORIAS</h1>
+
+        <div id="div_todas_historias">
+          <div class="divs_todas_historias_separacao">
+            <div class="div_titulo_card">
+              <h4 id="my_history1"></h4>
+              <br />
+            </div>
+            <p id="my_texto1" class="my_texto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              impedit officiis deleniti ea voluptatibus nemo facere sapiente
+              eligendi fugit sed, beatae temporibus, dolorem laudantium
+              blanditiis, velit autem doloremque ipsa magnam!
+            </p>
+            <br />
+        
+          </div>
+          <div
+            class="divs_todas_historias_separacao"
+            id="divs_todas_historias_separacao_meio"
+          >
+            <div class="div_titulo_card">
+              <h4 id="my_history2"></h4>
+              <br />
+            </div>
+            <p id="my_texto2" class="my_texto">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque
+              repudiandae, dolore officiis ullam provident, est, reprehenderit
+              id quaerat amet sunt praesentium eius vel. Animi vel ullam quaerat
+              maxime porro ab.
+            </p>
+            <br />
+ 
+          </div>
+          <div class="divs_todas_historias_separacao">
+            <div class="div_titulo_card">
+              <h4 id="my_history3"></h4>
+              <br />
+            </div>
+            <p id="my_texto3" class="my_texto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              similique praesentium repudiandae. Culpa impedit ipsam a adipisci!
+              Officiis aut incidunt numquam quos doloremque illo molestias
+              adipisci a, suscipit, expedita consequuntur.
+            </p>
+            <br />
+        
+          </div>
+        </div>
+        <div id="div_principal_minhas_historias">
+          <button onclick="Sair2()" id="Sair2"></button>
+          <div id="div_principal_tabela">
+            <div id="div_titulo">
+              <h4>Titulo</h4>
+              <h4 id="h4_meio">Historia</h4>
+              <h4>Classificação</h4>
+              
+            </div>
+            <div id="Inserir_historias">
+              <div id="div_valores_tabela">
+                <h5></h5>
+                <h5 id="h5_meio"></h5>
+                <h5></h5>
+              </div>
+            </div>
+          </div>
+          <button
+            id="Mais_historias"
+            class="button_minhasHistorias"
+            onclick="Cadastrar_maisHistorias()"
+          >
+            Mais Historias
+          </button>
+        </div>
+        <div id="div_pop_up_historias">
+          <div id="div_principal_form">
+            <button id="Sair" onclick="Sair1()"></button>
+
+            <h3 style="margin-top: 3%;">Titulo</h3>
+            <input type="text" id="input_titulo" name="titulo" placeholder="Titulo da Historia"/>
+            <h3 style="margin-top: 2%;">Historia</h3>
+            <textarea name="descricao" id="input_historia" placeholder="Desperte a magia das suas experiências com filmes da Disney. Conte como essas histórias encantadoras encontraram um lugar em sua vida, guiando-o através de desafios e oferecendo mensagens que iluminaram seu caminho. Pondendo colocar minutos para facilitar a sua historia."></textarea
+            ><br /><br />
+
+            <button
+              class="button_classificacao"
+              id="input_classificacao1"
+              value="1"
+              type="button"
+              onclick="selecionarClassificacao(1), botao1_ativado()"
+            ></button>
+
+            <button
+              class="button_classificacao"
+              id="input_classificacao2"
+              value="2"
+              type="button"
+              onclick="selecionarClassificacao(2), botao2_ativado()"
+            ></button>
+
+            <button
+              class="button_classificacao"
+              id="input_classificacao3"
+              value="3"
+              type="button"
+              onclick="selecionarClassificacao(3), botao3_ativado()"
+            ></button>
+
+            <button
+              class="button_classificacao"
+              id="input_classificacao4"
+              value="4"
+              type="button"
+              onclick="selecionarClassificacao(4), botao4_ativado()"
+            ></button>
+
+            <button
+              class="button_classificacao"
+              id="input_classificacao5"
+              value="5"
+              type="button"
+              onclick="selecionarClassificacao(5), botao5_ativado()"
+            ></button
+            ><br /><br />
+            <button
+              onclick="publicar()"
+              id="cadastrar_historia_pop-up"
+              type="button"
+            >
+              Cadastrar
+            </button>
+          </div>
+        </div>
+        <button
+          onclick="Minhas_Historias2()"
+          id="button_minhasHistorias"
+          class="button_minhasHistorias"
+        >
+          Minhas historias
+        </button>
+      </div>
+      <div id="div_terceiro_sistema">
+        <h1>CLASSIFICAÇÃO</h1>
+        <br /><br />
+        <div id="div_grafico">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    var Titulo = JSON.parse(sessionStorage.HISTORIAS); //Aqui, estou declarando a variavel Titulo para receber a informação da sessão do usuario por JSON
+    var Descricao = JSON.parse(sessionStorage.HISTORIAS);//Aqui, estou declarando a variavel Titulo para receber a informação da sessão do usuario por JSON
+    var classificacaoSelecionada = 0; //Aqui é a classificação do usuario quando apertar nas estrelas, que estão sendo passados por parametros atraves dos botões
+
+    const TituloSession = Titulo.map((item) => item.titulo); //Aqui estou pegando o titulo da sessão com o map, o map vai percorrer o a variavel Titulo, e os dados que receber. vai ser passado pelo item, ao resgatar com o item, ele vai buscar no banco o nome "item" atraves do item.titulo
+    const DescricaoSession = Descricao.map((item) => item.descricao);//Aqui estou pegando o titulo da sessão com o map, o map vai percorrer o a variavel Titulo, e os dados que receber. vai ser passado pelo item, ao resgatar com o item, ele vai buscar no banco o nome "item" atraves do item.descricao
+
+    my_history1.innerHTML = TituloSession[0] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
+    my_history2.innerHTML = TituloSession[1]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segundo numero da lista, ou seja o 1
+    my_history3.innerHTML = TituloSession[2]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceiro numero da lista, ou seja o 2
+
+    my_texto1.innerHTML = DescricaoSession[0] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
+    my_texto2.innerHTML = DescricaoSession[1] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segunda numero da lista, ou seja o 1
+    my_texto3.innerHTML = DescricaoSession[2]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceira numero da lista, ou seja o 2
+
+    logo.innerHTML = sessionStorage.EMAIL_USUARIO; // Aqui estou pegando o id Logo que está no HTML, e pegando o email da sessão do usuario atraves da sessionStorage(função nativa do JavaScript)
+
+    document.addEventListener("DOMContentLoaded", function () { //Esssa é uma funcão que vai ser ativada quando carregar a pagina
+      fetch('./global/buscar') //Aqui estou pegando a rota para minha requisição buscar os valores do banco 
+        .then(response => response.json()) //Aqui ele vai tentar fazer a requisição com o parametro response, e essa resposta eu tranformo em JSON
+        .then(data => { //Aqui estou pegando o parametro data que é a reposta do servidor, e vou tentar rodar o código com uma função
+          var divIdScrow = document.getElementById('div_id_scrow'); //Aqui estou pegando o pelo id minha div do HTML
+          data.forEach(historia => { //Com o parametro acima data, eu vou percorrer a lista que o modal trouxe para essa pagina
+
+          var div_historia = document.createElement('div'); //Aqui estou criando uma variavel e ao mesmo tempo criando um elemento div
+          div_historia.classList.add('div_historias_globais'); //Aqui estou adicionando uma class na div acima, classe que está no css
+
+          var h4 = document.createElement('h4'); //Aqui estou criando uma variavel chamada h4, e estou criando um elemento h4
+          h4.innerHTML = historia.titulo; //Aqui estou inserindo no h4 a historia, que é o parametro que foi percorrido no forEach, depois eu pego o titulo(mesmo nome do banco de dados)
+
+          var p = document.createElement('p');//Aqui estou criando a variavel p e criando um elemento p, que é a descrição da historia
+          p.innerHTML = historia.descricao;//Aqui estou inserindo com o innerHTML o parametro historia, a descrição que é a do banco de dados
+
+            div_historia.appendChild(h4);//Aqui estou colocando o titulo da historia na div que criei, seria a div branca com borda para leitura
+            div_historia.appendChild(p);//Aquei estou colocando a descrição da historia na div que criei
+            divIdScrow.appendChild(div_historia); //Aqui estou colocando essa div branca com os texto dentro do scroll, onde fica o "carrosel"
+          });
+        })
+        .catch(error => console.error('Erro ao buscar dados:', error));//Aque seria o tratamento de erro, com o parametro de error
+    });
+    
+    function selecionarClassificacao(valor) { //Essa função pega o valor do parametro nos botões da estrela e coloca na variavel classificacaoSelecionada, com o valor que o usuario clicou
+      classificacaoSelecionada = valor; //Aramazenamento do valor da variavel
+    }
+
+    function publicar() {// Essa é a função de cadastrar a historia com o titulo, descrição e classificação
+      var titulo = input_titulo.value;//Aqui estou pegando o valor da input titulo, que seria o titulo que o usuario inseriu.
+      var descricao = input_historia.value;//Aqui seria a descrição da input_descricao, é a historia do usuario
+
+      var idUsuario = sessionStorage.ID_USUARIO;//Aqui é o id do usuario, onde a função nativa sessionStorage pega o ID
+
+      var corpo = { //Aqui é a criação da variavel corpo, sendo um objeto, que o JSON consegue ler
+        titulo: titulo, //Aqui seria o primeiro valor o dado do objeto que estou criando, com a nomeclatura do banco de dados, e o valor da input
+        descricao: descricao,//Aqui seria o primeiro valor o dado do objeto que estou criando, com a nomeclatura do banco de dados, e o valor da input
+        classificacao: classificacaoSelecionada,//Aqui seria o primeiro valor o dado do objeto que estou criando, com a nomeclatura do banco de dados, e o valor da input
+      };
+
+      fetch(`/avisos/publicar/${idUsuario}`, { //Aqui é a requisição feita para cadastrar a historia, de acordo com o id do usuario, para identifica-lo
+        method: "POST", //Aqui é o tipo da requisição, se é POST OU GET, POST é para enviar dados
+        headers: {
+          "Content-Type": "application/json",// Aqui informa ao servidor como será enviado, será em JSON
+        },
+        body: JSON.stringify(corpo), //Aqui é o tipo dos dados que vão mandar, transformou o objeto corpo lá em cima, por um JSON, que vai ser recebido com o body na pagina controller
+      })
+        .then(function (resposta) {// Aqui é ele vai tentar mandar os dados pegos lá em cima, com o parametro de resposta para pegar se é uma resposta postiviva ou negativa vindo do servidor
+          console.log("resposta: ", resposta);//Aqui ele vai exibir a resposta do servidor
+
+          if (resposta.ok) { //Se a resposta for ok, ele vai cadastrar a historia com sucesso
+            alert("Historia cadastrada");//Vai exibir para o usuario o resultado positivo
+            div_pop_up_historias.style.display = "none";//Aqui ele está tirando o pop-up para cadastro da historias
+            window.location = "index.html";// Aqui está transferindo o usuario para outra pagina
+          } else if (resposta.status == 404) {//Se a resposta for o erro 404, que pode ser que o servidor caiu ou não funcionou a requisição
+            window.alert("Deu 404!");//Aqui ele está exibindo um alerta na pagina, deu 404!
+          } else {//Senão for o erro 404
+            throw ( //Aqui ele está lançando uma mensagem caso não seja o erro acima
+              "Houve um erro ao tentar realizar a postagem! Código da resposta: " +//Aqui é respota que vai ser lançada
+              resposta.status// Aqui é a resposta e os status daquela resposta
+            );
+          }
+        })
+        .catch(function (resposta) { // Aqui ele vai pegar o erro, e com o paramentro seria a informação daquele erro
+          console.log(`#ERRO: ${resposta}`);//Está exibindo o erro
+        });
+
+      return false;//Está retornando falso
+    }
+    function AbrirAlbum() {
+      album_disney.style.display = 'flex' //Aqui ele está abrindo o album ou playlist da Disney 
+    }
+    function Sair3() {
+      album_disney.style.display = 'none'  //Aqui ele está saindo do album ou playlist
+    }
+    function Minhas_Historias2() { //Aqui é a funçõa para mostrar as historias do usuario
+      div_principal_minhas_historias.style.display = "flex"; //Aqui é a div que está como none normalmente, um pop-up
+      Inserir_historias.innerHTML = '' //Aqui ele está limpando a div
+      var descricao = input_historia.value; 
+
+      var historias = JSON.parse(sessionStorage.HISTORIAS); //Aqui estou criando uma variavel com as historias daquela sessão, daquele usuario em formato JSON
+      historias.forEach((item) => {//Aqui ele está percorrendo a variavel com o forEach, e a informação está sendo passada pelo parametro
+        Inserir_historias.innerHTML += `
+        <div id="div_valores_tabela">
+                <h5>${item.titulo}</h5>
+                <h5 id="h5_meio">${item.descricao}</h5>
+                <h5>${item.classificacao}</h5>
+              </div>
+            `;
+      });//Aqui estou inserindo na div Inserir_historias com o innerHTML, outra div, outra linha com os dados do usuario, que está sendo percorrido com o parametro item, e sendo pegos com as informações do banco(mesma nomeclatura)
+    }
+    function Sair2() {//Função de sair do pop-up
+      div_principal_minhas_historias.style.display = "none";//Aqui estou saindo de um pop-up, informando que é display none
+    }
+    function Cadastrar_maisHistorias() {//Funçõa para abrir um pop-up e fechar outro
+      div_principal_minhas_historias.style.display = "none"; //Fechando o pop-up com as historias do usuario
+      div_pop_up_historias.style.display = "flex";//Abrindo o pop-up de cadastro de historia
+    }
+    function Sair1() {//Função para sair de um pop-up
+      div_pop_up_historias.style.display = "none";//Definindo o pop-up com o display none, para fechar
+    }
+  </script>
+  <script>
+    const ctx = document.getElementById("myChart");//Criação do chartjs
+
+    var historias = JSON.parse(sessionStorage.HISTORIAS); //Aqui estou criando uma variavel com as historias do usuario, tive que criar outra pois a outra lá emcima não funciona pegando aqui
+    const todasAsClassificacoes = historias.map((item) => item.classificacao)//Aqui estou pegando todas as classificações do usuario pelo map, que está me retornando um array
+    const todosTitulos = historias.map((item) => item.titulo); //Aqui estou pegando o titulo daquela historia
+
+    new Chart(ctx, {
+      type: "bar",
+      backgroundColor: '#f9f7f7',
+      data: {
+        labels: todosTitulos,// Aqui estou atribuindo os labels do grafico, como todos os labels das classificações
+        datasets: [
+          {
+            label: "Classificação de estrelas",
+            data: todasAsClassificacoes,//Aqui estou colocando os valores, com os valores das classificações do usuario
+       backgroundColor: [
+          'rgba(255, 99, 132, 0.2)', //Aqui são as cores das colunos
+          'rgba(255, 159, 64, 0.2)',//Aqui são as cores das colunos
+          'rgba(255, 205, 86, 0.2)',//Aqui são as cores das colunos
+          'rgba(75, 192, 192, 0.2)',//Aqui são as cores das colunos
+          'rgba(54, 162, 235, 0.2)',//Aqui são as cores das colunos
+          'rgba(153, 102, 255, 0.2)',//Aqui são as cores das colunos
+          'rgba(201, 203, 207, 0.2)'//Aqui são as cores das colunos
+               ],
+        borderColor: [
+          'rgb(255, 99, 132)',//Aqui são as cores das bordas das colunos
+          'rgb(255, 159, 64)',//Aqui são as cores das bordas das colunos
+          'rgb(255, 205, 86)',//Aqui são as cores das bordas das colunos
+          'rgb(75, 192, 192)',//Aqui são as cores das bordas das colunos
+          'rgb(54, 162, 235)',//Aqui são as cores das bordas das colunos
+          'rgb(153, 102, 255)',//Aqui são as cores das bordas das colunos
+          'rgb(201, 203, 207)'//Aqui são as cores das bordas das colunos
+              ],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+        grid: {
+          display: false,
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        }
+      },
+    }
+      }
+      
+    });
+
+  </script>
+  <style>
+    #Sair3 {
+      width: 50px;
+      height: 55px;
+      position: absolute;
+      left: 100%;
+      top: 10%;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      background-size: 100%;
+      background: url("sair.png");
+    }
+     #album_disney {
+      display: none;
+      position: absolute;
+      top: 70%;
+      right: 35%;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: 300px;
+    }
+    #button_album {
+      position: absolute;
+      width: 15%;
+      right: 43%;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      top:35%;
+      padding: 0.4%;
+    }
+    #button_album:hover {
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      border: 0;
+    }
+    #button_album:focus {
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      border: 0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins";
+    }
+    .my_texto {
+      overflow:auto;
+      height: 80%;
+    }
+    .my_texto::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.my_texto::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.my_texto::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.my_texto::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 6px;
+}
+
+    .header {
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      display: flex;
+      position: fixed;
+      flex-direction: row;
+      z-index: 1;
+    }
+    .logo {
+      width: 70%;
+      display: flex;
+      margin: 2.5%;
+    }
+    .header_links {
+      width: 30%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+    .header_links a {
+      text-decoration: none;
+      color: white;
+    }
+    .link_login {
+      margin: 0 7% 0 7%;
+    }
+    #separacao_global_historia {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-y: auto;
+  white-space: nowrap
+}
+
+#div_id_scrow {
+  width: 90%; 
+  height: 90%;
+  overflow-x: auto;  
+}
+
+.div_historias_globais {
+  width: 25%;
+  border-radius: 20px;
+  height: 65%;
+  padding: 2%;
+  display: inline-block;
+  margin: 7% 2% 0 1%;
+  border: 1px solid black;
+  background-color: white;
+  overflow:scroll;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  white-space: wrap;
+  text-align: center;
+}
+
+.div_historias_globais p {
+      max-width: 100%;
+
+}
+
+    #div_id_scrow::-webkit-scrollbar {
+  width: 8px;
+  height: 10px; 
+}
+
+#div_id_scrow::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+#div_id_scrow::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+#div_id_scrow::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 6px;
+}
+#div_principal {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+    #header_sistema {
+      background-color: #16171c;
+    }
+    #div_incial_sistema {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 700px;
+      flex-direction: column;
+      background: url("fundoDivertidamente.jpg") no-repeat;
+      background-size: 100%;
+      padding: 4% 0 0 0;
+    }
+    #div_secundaria_sistema {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 700px;
+      flex-direction: column;
+      background: url("incriveisFundo.jpg");
+      background-size: 100%;
+      padding: 4% 0 0 0;
+    }
+    #div_secundaria_sistema h1 {
+      color: white;
+      margin-top: 4%;
+    }
+    #div_incial_sistema h1 {
+      color: white;
+      margin-top: 5%;
+    }
+    #div_todas_historias {
+      width: 70%;
+      height: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3%;
+    }
+    .divs_todas_historias_separacao {
+      width: 34%;
+      height: 80%;
+      background-color: white;
+      border-radius: 20px;
+      text-align: center;
+      padding: 2%;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    }
+    #divs_todas_historias_separacao_meio {
+      margin: 0 2% 0 2%;
+    }
+    .divs_todas_historias_separacao a {
+      color: black;
+    }
+    #div_incial_sistema button {
+      width: 20%;
+      padding: 1%;
+      color: white;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: black;
+      border: 0;
+      margin-bottom: 3%;
+    }
+    #div_incial_sistema button:hover {
+      width: 20%;
+      padding: 1%;
+      color: black;
+      border-radius: 20px;
+      font-size: 15px;
+      background-color: white;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    .button_minhasHistorias {
+      width: 20%;
+      padding: 1%;
+      color: white;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: black;
+      border: 0;
+    }
+    .button_minhasHistorias:hover {
+      width: 20%;
+      padding: 1%;
+      color: black;
+      border-radius: 20px;
+      font-size: 15px;
+      background-color: white;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    #div_terceiro_sistema {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 500px;
+      color: white;
+      flex-direction: column;
+      background: url("fundoCarros.jpg") no-repeat;
+      background-size: 100%;
+      padding: 4% 0 0 0;
+    }
+    #div_grafico {
+      width: 47%;
+      background-color: white;
+      height: 70%;
+      border-radius: 4px;
+      padding: 0.5%;
+    }
+    #myChart {
+      width: 100%;
+      height: 100%;
+    }
+    #div_pop_up_historias {
+      position: absolute;
+      width: 60%;
+      height: 550px;
+      border-radius: 10px;
+      padding: 4%;
+      display: none;
+      text-align: center;
+      justify-content: center;
+    }
+    #div_principal_form {
+      height: 93%;
+      width: 100%;
+      border-radius: 20px;
+      padding: 1%;
+      background-color: white;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      border: 1px solid black;
+    }
+    #div_principal_form form {
+      width: 100%;
+      height: 100%;
+      justify-content: left;
+      text-align: left;
+      padding: 2% 0 1% 4%;
+    }
+    #input_titulo {
+      padding: 0.6%;
+      width: 60%;
+      border-radius: 7px;
+    }
+    textarea {
+      width: 80%;
+      height: 42%;
+      padding: 1%;
+      border-radius: 7px;
+    }
+    .button_classificacao {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: 0;
+      background: url("estrela-preto.png");
+    }
+    .button_classificacao:hover {
+      cursor: pointer;
+    }
+
+    #Sair {
+      width: 50px;
+      height: 64px;
+      position: absolute;
+      left: 85%;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      background-size: 100%;
+      background: url("sair.png");
+    }
+    #cadastrar_historia_pop-up {
+      width: 20%;
+      padding: 0.5%;
+      color: white;
+      border-radius: 20px;
+      font-size: 14px;
+      background-color: black;
+      border: 0;
+    }
+    #div_principal_minhas_historias {
+      width: 40%;
+      padding: 4%;
+      display: none;
+      flex-direction: center;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      height: auto;
+      border: 1px solid black;
+      position: absolute;
+      border-radius: 10px;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.44);
+    }
+
+    #div_principal_tabela {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      flex-direction: column;
+    }
+    #Sair2 {
+      background-color: #07070745;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: none;
+      border: 0;
+      right: 5%;
+      cursor: pointer;
+      top: 5%;
+      background: url("sair20.png");
+    }
+    #Mais_historias {
+      position: absolute;
+      left: 5%;
+      bottom: 5%;
+      font-size: 14px;
+    }
+    #div_titulo {
+      flex-direction: row;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      margin-top: 5%;
+    }
+    #h4_meio {
+      margin: 0 15% 0 0%;
+      width: 100%;
+    }
+    #div_valores_tabela {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      margin-top: 0;
+      margin-bottom: 6%;
+      width: 100%;
+      height: 100px;
+      overflow: auto;
+      border-bottom: 2px solid black;
+    }
+    #Inserir_historias {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: 3%;
+      width: 100%;
+    }
+    #h5_meio {
+      margin: 0 15% 0 15%;
+      width:100%;
+      text-align: justify;
+      overflow-y: scroll;
+    }
+    #input_classificacao1:active {
+      background-image: url("estrela-amarelo.png");
+    }
+  </style>
+   <script defer src="index.js"></script>
+</html>
