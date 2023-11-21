@@ -8,13 +8,13 @@ function validarSessao() {
     if (email != null && nome != null) {
         logo.innerHTML = email;
     } else {
-        window.location = "login.html";
+        window.location = "index.html";
     }
 }
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "../login.html";
+    window.location = "../index.html";
 }
 
 // carregamento (loading)

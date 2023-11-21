@@ -30,14 +30,14 @@
           <iframe width="550" height="200" id="iframe_video" src="https://www.youtube.com/embed/videoseries?si=QqsAAIuCAdK76BpA&amp;list=PLE3QI0lc3cfEzUKSzYHgAHyDNphzfR878" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="header_links">
-          <a href="../inicial/index.html">Pagina Inicial</a>
-          <a href="index.html" class="link_login">Login</a>
+          <a href="../inicial/index.html" style="margin-right:20%;">Pagina Inicial</a>
+      
           <a href="index.html" onclick="limparSessao()">SAIR</a>
         </div>
     
       </div>
       <div id="div_incial_sistema"><br>
-        <h1>TODAS AS HISTORIAS</h1>
+        <h1>TODAS <span onclick="EasterEgg3()" style="cursor: pointer;">AS</span> HISTORIAS</h1>
        <div id="separacao_global_historia">
         <div id="div_id_scrow">
       </div>
@@ -53,10 +53,7 @@
               <br />
             </div>
             <p id="my_texto1" class="my_texto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              impedit officiis deleniti ea voluptatibus nemo facere sapiente
-              eligendi fugit sed, beatae temporibus, dolorem laudantium
-              blanditiis, velit autem doloremque ipsa magnam!
+        
             </p>
             <br />
         
@@ -70,10 +67,7 @@
               <br />
             </div>
             <p id="my_texto2" class="my_texto">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque
-              repudiandae, dolore officiis ullam provident, est, reprehenderit
-              id quaerat amet sunt praesentium eius vel. Animi vel ullam quaerat
-              maxime porro ab.
+
             </p>
             <br />
  
@@ -84,10 +78,6 @@
               <br />
             </div>
             <p id="my_texto3" class="my_texto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-              similique praesentium repudiandae. Culpa impedit ipsam a adipisci!
-              Officiis aut incidunt numquam quos doloremque illo molestias
-              adipisci a, suscipit, expedita consequuntur.
             </p>
             <br />
         
@@ -104,7 +94,7 @@
             </div>
             <div id="Inserir_historias">
               <div id="div_valores_tabela">
-                <h5></h5>
+                <h5 style="width: 100%;"></h5>
                 <h5 id="h5_meio"></h5>
                 <h5></h5>
               </div>
@@ -125,7 +115,7 @@
             <h3 style="margin-top: 3%;">Titulo</h3>
             <input type="text" id="input_titulo" name="titulo" placeholder="Titulo da Historia"/>
             <h3 style="margin-top: 2%;">Historia</h3>
-            <textarea name="descricao" id="input_historia" placeholder="Desperte a magia das suas experiências com filmes da Disney. Conte como essas histórias encantadoras encontraram um lugar em sua vida, guiando-o através de desafios e oferecendo mensagens que iluminaram seu caminho. Pondendo colocar minutos para facilitar a sua historia."></textarea
+            <textarea name="descricao" id="input_historia" placeholder="Desperte a magia das suas experiências com filmes da Disney. Conte como essas histórias encantadoras encontraram um lugar em sua vida, guiando-o através de desafios e oferecendo mensagens que iluminaram seu caminho. Pondendo colocar minutos dos filmes para facilitar a sua historia. Max: 2500 caracteres" maxlength="2500"></textarea
             ><br /><br />
 
             <button
@@ -189,13 +179,107 @@
         <h1>CLASSIFICAÇÃO</h1>
         <br /><br />
         <div id="div_grafico">
-          <canvas id="myChart"></canvas>
+          <canvas id="myChart" class="grafico"></canvas>
+        </div>
+      </div>
+      <div id="div_quinto_sistema">
+        <h1>ENQUETE</h1>
+        <br /><br>
+        <h3 id="textoEnquete">Qual é o melhor filme de todos na sua opnião?</h3><br><br>
+       <div id="div_principal_enquete">
+        <div id="cima_enquete">
+          <button class="button_resposta_enquete" onclick="Opcao('leao')" id="button_leao" style="margin-right: 1%;">Rei leão</button>
+          <button class="button_resposta_enquete" onclick="Opcao('urso')" id="button_urso">Irmão urso</button>
+        </div><br>
+        <div id="embaixo_enquete">
+          <button class="button_resposta_enquete" onclick="Opcao('mulan')" id="button_mulan" style="margin-right: 1%;">Mulan</button>
+          <button class="button_resposta_enquete" onclick="Opcao('fera')" id="button_fera">A Bela e a Fera</button>
+        </div>
+        <p id="obsP" onclick="EasterEgg1()">*A ENQUETE PODE SER RESPONDIDA APENAS UMA VEZ*</p>
+       </div>
+      <div id="div_grafico2">
+          <canvas id="myChart2" class="grafico"></canvas>
+        </div>
+      </div>
+      <div id="div_quarta_sistema">
+        <h1>QUIZ</h1>
+        <br />
+        <h3></h3><br />
+        <div id="div_principal_quiz">
+          <div class="question" id="questao1">
+            <h3>1. QUAL FOI O PRIMEIRO FILME LONGA-METRAGEM DA DISNEY?</h3>
+            <div id="separacao_quiz1">
+              <div class="div_perguntas">
+                <button class="respostas" id="resposta1" onclick="Resposta_ErradaCinderela()">Cinderela</button>
+              </div>
+              <div class="div_perguntas">
+                <button class="respostas" id="resposta2" onclick="Resposta_ErradaPinoquio()">Pinoquio</button>
+              </div>
+            </div>
+            <div id="separacao_quiz2">
+              <div class="div_perguntas">
+                <button class="respostas" id="resposta3" onclick="Resposta_Certa()">Branca de neve</button>
+              </div>
+              <div class="div_perguntas">
+                <button class="respostas" id="resposta4"  onclick="Resposta_ErradaLeao()">O rei leão</button>
+              </div>
+            </div>
+            </div>
+            <div class="question" id="questao2">
+              <h3>2. COM QUANTOS ANOS A CINDERELA SE CASOU?</h3>
+              <div id="separacao_quiz1">
+                <div class="div_perguntas">
+                  <button class="respostas" id="resposta1Q2" onclick="Resposta_CertaQ2()">19</button>
+                </div>
+                <div class="div_perguntas">
+                  <button class="respostas" id="resposta2Q2" onclick="Resposta_ErradaQ2_20()">20</button>
+                </div>
+              </div>
+              <div id="separacao_quiz2">
+                <div class="div_perguntas">
+                  <button class="respostas" id="resposta3Q2" onclick="Resposta_ErradaQ2_18()">18</button>
+                </div>
+                <div class="div_perguntas">
+                  <button class="respostas" id="resposta4Q2"  onclick="Resposta_ErradaQ2_21()">21</button>
+                </div>
+              </div>
+              </div>
+              <div class="question" id="questao3">
+                <h3>3. QUAL É O NOME DA GAROTINHA DO FILME TOY STORY 3</h3>
+                <div id="separacao_quiz1">
+                  <div class="div_perguntas">
+                    <button class="respostas" id="resposta1Q3" onclick="Resposta_ErradaRaquel()">Raquel</button>
+                  </div>
+                  <div class="div_perguntas">
+                    <button class="respostas" id="resposta2Q3" onclick="Resposta_CertaQ3()">Bonnie</button>
+                  </div>
+                </div>
+                <div id="separacao_quiz2">
+                  <div class="div_perguntas">
+                    <button class="respostas" id="resposta3Q3" onclick="Resposta_ErradaMaria()">Maria</button>
+                  </div>
+                  <div class="div_perguntas">
+                    <button class="respostas" id="resposta4Q3"  onclick="Resposta_ErradaCris()">Cris</button>
+                  </div>
+                </div>
+                </div><br><br><br>
+                <h3>Historico total pontos: <span id="mostrar_pontos" onclick="EasterEgg2()" style="font-size: bold;"></span></h3>
         </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+    function EasterEgg1() {
+    alert('O personagem Sulley tem mais de 2,3 milhões de pelos desenhados um por um. Uma cena em que o monstro aparece inteiro leva cerca de 12 horas de trabalho.')
+  }
+  function EasterEgg2() {
+    alert('Tom Cruise foi a inspiração para a aparência do Aladdin.')
+  }
+  function EasterEgg3() {
+    alert('Universidade Monstros tem 227 mil desenhos, o que faz deste filme da Disney-Pixar o que tem o maior número de desenhos já feitos.')
+  }
+
     var Titulo = JSON.parse(sessionStorage.HISTORIAS); //Aqui, estou declarando a variavel Titulo para receber a informação da sessão do usuario por JSON
     var Descricao = JSON.parse(sessionStorage.HISTORIAS);//Aqui, estou declarando a variavel Titulo para receber a informação da sessão do usuario por JSON
     var classificacaoSelecionada = 0; //Aqui é a classificação do usuario quando apertar nas estrelas, que estão sendo passados por parametros atraves dos botões
@@ -203,13 +287,15 @@
     const TituloSession = Titulo.map((item) => item.titulo); //Aqui estou pegando o titulo da sessão com o map, o map vai percorrer o a variavel Titulo, e os dados que receber. vai ser passado pelo item, ao resgatar com o item, ele vai buscar no banco o nome "item" atraves do item.titulo
     const DescricaoSession = Descricao.map((item) => item.descricao);//Aqui estou pegando o titulo da sessão com o map, o map vai percorrer o a variavel Titulo, e os dados que receber. vai ser passado pelo item, ao resgatar com o item, ele vai buscar no banco o nome "item" atraves do item.descricao
 
-    my_history1.innerHTML = TituloSession[0] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
-    my_history2.innerHTML = TituloSession[1]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segundo numero da lista, ou seja o 1
-    my_history3.innerHTML = TituloSession[2]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceiro numero da lista, ou seja o 2
+    my_history1.innerHTML = TituloSession[0]  || "Historia" //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
+    my_history2.innerHTML = TituloSession[1] || "Historia"//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segundo numero da lista, ou seja o 1
+    my_history3.innerHTML = TituloSession[2] || "Historia"//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel TituloSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceiro numero da lista, ou seja o 2
 
-    my_texto1.innerHTML = DescricaoSession[0] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
-    my_texto2.innerHTML = DescricaoSession[1] //Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segunda numero da lista, ou seja o 1
-    my_texto3.innerHTML = DescricaoSession[2]//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceira numero da lista, ou seja o 2
+    my_texto1.innerHTML = DescricaoSession[0] || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisqua impedit officiis deleniti ea voluptatibus nemo facere sapiente eligendi fugit sed, beatae temporibus, dolorem laudantium blanditiis, velit autem doloremque ipsa magnam!"//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o primeiro numero da lista, ou seja o 0
+    my_texto2.innerHTML = DescricaoSession[1] || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisqua impedit officiis deleniti ea voluptatibus nemo facere sapiente eligendi fugit sed, beatae temporibus, dolorem laudantium blanditiis, velit autem doloremque ipsa magnam!"//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o segunda numero da lista, ou seja o 1
+    my_texto3.innerHTML = DescricaoSession[2] || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisqua impedit officiis deleniti ea voluptatibus nemo facere sapiente eligendi fugit sed, beatae temporibus, dolorem laudantium blanditiis, velit autem doloremque ipsa magnam!"//Aqui, estou pegando a div com o nome de my_history e estou colocando com o innerHTML a variavel DescricaoSession que tem o array, com os valores do banco, e depois estou dizendo que quero pegar o terceira numero da lista, ou seja o 2
+
+    var idUsuario = sessionStorage.ID_USUARIO
 
     logo.innerHTML = sessionStorage.EMAIL_USUARIO; // Aqui estou pegando o id Logo que está no HTML, e pegando o email da sessão do usuario atraves da sessionStorage(função nativa do JavaScript)
 
@@ -236,10 +322,78 @@
         })
         .catch(error => console.error('Erro ao buscar dados:', error));//Aque seria o tratamento de erro, com o parametro de error
     });
+    document.addEventListener("DOMContentLoaded", function () { //Esssa é uma funcão que vai ser ativada quando carregar a pagina
+      fetch(`./quiz/listar/${idUsuario}`) //Aqui estou pegando a rota para minha requisição buscar os valores do banco 
+        .then(response => response.json()) //Aqui ele vai tentar fazer a requisição com o parametro response, e essa resposta eu tranformo em JSON
+        .then(data => { //Aqui estou pegando o parametro data que é a reposta do servidor, e vou tentar rodar o código com uma função
+          var MostrarP = document.getElementById('mostrar_pontos');
+
+        // Verifica se o primeiro item em 'data' contém a propriedade 'SUM(qtdPontos)'
+        for(var i = 0; i < data.length; i++) {
+        if (data.length >= 0) {
+            var totalPontos = data[i]['SUM(qtdPontos)'] || '';
+            MostrarP.innerHTML = `${totalPontos}`;
+        } else {
+            console.error('ERRO ao tentar buscar dados:', data);
+        }
+      }
+    })
+         .catch(error => console.error('Erro ao buscar dados:', error));//Aque seria o tratamento de erro, com o parametro de error
     
+        })
+    
+    document.addEventListener("DOMContentLoaded", function () { //Esssa é uma funcão que vai ser ativada quando carregar a pagina
+      fetch(`./enquete/listar/${idUsuario}`) //Aqui estou pegando a rota para minha requisição buscar os valores do banco 
+        .then(response => response.json()) //Aqui ele vai tentar fazer a requisição com o parametro response, e essa resposta eu tranformo em JSON
+        .then(data => { //Aqui estou pegando o parametro data que é a reposta do servidor, e vou tentar rodar o código com uma função
+          if(data.length > 0) {
+            var divSumir = document.getElementById('div_principal_enquete')
+            var textoEn = document.getElementById('textoEnquete')
+            var div_grafico2 = document.getElementById('div_grafico2')
+            divSumir.style.display = "none"
+            textoEn.style.display = "none"
+            div_grafico2.style.display = "flex"
+
+          }
+    })
+         .catch(error => console.error('Erro ao buscar dados:', error));//Aque seria o tratamento de erro, com o parametro de error
+    
+        })
+
     function selecionarClassificacao(valor) { //Essa função pega o valor do parametro nos botões da estrela e coloca na variavel classificacaoSelecionada, com o valor que o usuario clicou
       classificacaoSelecionada = valor; //Aramazenamento do valor da variavel
     }
+        
+    function Opcao(respostaEnquete) {
+      fetch(`/enquete/publicar/${idUsuario}`, { //Aqui é a requisição feita para cadastrar a historia, de acordo com o id do usuario, para identifica-lo
+        method: "POST", //Aqui é o tipo da requisição, se é POST OU GET, POST é para enviar dados
+        headers: {
+            "Content-Type": "application/json",// Aqui informa ao servidor como será enviado, será em JSON
+        },
+        body: JSON.stringify({
+            respostaServer: respostaEnquete
+        }), //Aqui é o tipo dos dados que vão mandar, transformou o objeto corpo lá em cima, por um JSON, que vai ser recebido com o body na pagina controller
+    })
+        .then(function (resposta) {// Aqui é ele vai tentar mandar os dados pegos lá em cima, com o parametro de resposta para pegar se é uma resposta postiviva ou negativa vindo do servidor
+            console.log("resposta: ", resposta);//Aqui ele vai exibir a resposta do servidor
+
+            if (resposta.ok) { //Se a resposta for ok, ele vai cadastrar a historia com sucesso
+                alert(`Enquete cadastrada!`)
+                document.location.reload(true)
+                } else if (resposta.status == 404) {//Se a resposta for o erro 404, que pode ser que o servidor caiu ou não funcionou a requisição
+                window.alert("Deu 404!");//Aqui ele está exibindo um alerta na pagina, deu 404!
+            } else {//Senão for o erro 404
+                throw ( //Aqui ele está lançando uma mensagem caso não seja o erro acima
+                    "Houve um erro ao tentar realizar a postagem! Código da resposta: " +//Aqui é respota que vai ser lançada
+                    resposta.status// Aqui é a resposta e os status daquela resposta
+                );
+            }
+        })
+        .catch(function (resposta) { // Aqui ele vai pegar o erro, e com o paramentro seria a informação daquele erro
+            console.log(`#ERRO: ${resposta}`);//Está exibindo o erro
+        });
+  }
+
 
     function publicar() {// Essa é a função de cadastrar a historia com o titulo, descrição e classificação
       var titulo = input_titulo.value;//Aqui estou pegando o valor da input titulo, que seria o titulo que o usuario inseriu.
@@ -266,7 +420,7 @@
           if (resposta.ok) { //Se a resposta for ok, ele vai cadastrar a historia com sucesso
             alert("Historia cadastrada");//Vai exibir para o usuario o resultado positivo
             div_pop_up_historias.style.display = "none";//Aqui ele está tirando o pop-up para cadastro da historias
-            window.location = "index.html";// Aqui está transferindo o usuario para outra pagina
+            document.location.href = 'sistema.html'// Aqui está transferindo o usuario para outra pagina
           } else if (resposta.status == 404) {//Se a resposta for o erro 404, que pode ser que o servidor caiu ou não funcionou a requisição
             window.alert("Deu 404!");//Aqui ele está exibindo um alerta na pagina, deu 404!
           } else {//Senão for o erro 404
@@ -350,6 +504,7 @@
           'rgb(201, 203, 207)'//Aqui são as cores das bordas das colunos
               ],
             borderWidth: 2,
+            fontWidth: 10
           },
         ],
       },
@@ -358,12 +513,16 @@
           x: {
         grid: {
           display: false,
-        }
+        },
+        
       },
       y: {
         grid: {
           display: false
-        }
+        },
+        ticks: {
+      precision:0
+          },
       },
     }
       }
@@ -371,7 +530,206 @@
     });
 
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+fetch(`./enquete/global`)
+  .then(response => response.json())
+  .then(data => {
+    const opcao = data.map(item => item['opcaoEscolhida']);
+    const valores = data.map(item => item['COUNT(opcaoEscolhida)']);
+    
+    const ctx2 = document.getElementById("myChart2");
+    
+    new Chart(ctx2, {
+      type: "doughnut",
+      backgroundColor: '#f9f7f7',
+      data: {
+        labels: opcao,
+        datasets: [
+          {
+            label: "Total de pontos",
+            data: valores,
+            backgroundColor: [
+              '#e6324b',
+              '#4180ab',
+              '#faba32',
+              '#9d4e0f',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+              '#e6324b',
+              '#4180ab',
+              '#faba32',
+              '#9d4e0f',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+              'rgb(201, 203, 207)'
+            ],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+            display:false,
+            grid: {
+              display: false
+              ,
+            },
+          },
+          y: {
+              display:false,
+            grid: {
+              display: false
+            },
+            ticks: {
+              precision: 0
+            },
+          },
+         },
+         plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 15,
+                    },
+                }
+            }
+        }
+            }
+    });
+  })
+  .catch(error => console.error('Erro ao buscar dados:', error));
+})
+  </script>
   <style>
+    #mostrar_pontos {
+      cursor: pointer;
+    }
+    #myChart2 {
+      display: none;
+      
+      margin: 0 auto;
+      align-items: center;
+      max-width: 100%;
+      padding: 2%;
+    }
+    .button_resposta_enquete {
+      width: 40%;
+      padding: 1.8%;
+      font-size: 18px;
+      border: 0;
+      background-color: white;
+      border-radius: 3px;
+    }
+    .button_resposta_enquete:hover {
+      background-color: black;
+      color: white;
+      transition: all 1s;
+      cursor: pointer;
+    }
+    #div_quinto_sistema {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    #cima_enquete {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    #embaixo_enquete {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    #div_principal_enquete {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #questao1 {
+      flex-direction: column;
+      display: flex;
+      transition: opacity 0.5s ease-in-out;
+    }
+    #questao2 {
+      flex-direction: column;
+      display: none;
+    }
+    #questao3 {
+      flex-direction: column;
+      display: none;
+    }
+    #div_principal_quiz {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      text-align: center;
+      height: 100%;
+      padding: 2%;
+    }
+    #questao1 h3 {
+      margin-bottom: 2%;
+    }
+    #questao2 h3 {
+      margin-bottom: 2%;
+    }
+    #questao3 h3 {
+      margin-bottom: 2%;
+    }
+
+    #separacao_quiz1 {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .div_perguntas {
+      border-radius: 5px;
+      display: flex;
+      border: 1px solid black;
+      width: 50%;
+      background-color: white;
+      text-align: center;
+      color: black;
+      height: 50px;
+      margin-top: 0.5%;
+    }
+    .respostas:hover {
+      cursor: pointer;
+      width: 100%;
+      background-color: black;
+      color: white;
+    }
+    .respostas {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+    }
+    #separacao_quiz2 {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+    }
+
     #Sair3 {
       width: 50px;
       height: 55px;
@@ -470,7 +828,7 @@
     .link_login {
       margin: 0 7% 0 7%;
     }
-    #separacao_global_historia {
+ #separacao_global_historia {
   width: 100%;
   height: 100%;
   display: flex;
@@ -496,7 +854,7 @@
   border: 1px solid black;
   background-color: white;
   overflow:scroll;
-  overflow-x: scroll;
+  overflow-x: hidden;
   flex-wrap: wrap;
   white-space: wrap;
   text-align: center;
@@ -511,7 +869,6 @@
   width: 8px;
   height: 10px; 
 }
-
 #div_id_scrow::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 6px;
@@ -599,6 +956,13 @@
       border: 0;
       margin-bottom: 3%;
     }
+    h3 {
+      font-weight: 700;
+    }
+    h4 {
+      font-weight: 700;
+    }
+    
     #div_incial_sistema button:hover {
       width: 20%;
       padding: 1%;
@@ -639,6 +1003,30 @@
       background-size: 100%;
       padding: 4% 0 0 0;
     }
+    #div_quarta_sistema {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 530px;
+      color: white;
+      background-image: url("fundoSA.jpg");
+      background-size: contain;
+      flex-direction: column;
+      background-size: 100%;
+      padding: 4% 0 0 0;
+    }
+    #div_quinto_sistema {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 550px;
+      color: white;
+      background: url("fundoEra.jpg") center no-repeat;
+      flex-direction: column;
+      background-size: cover;
+      padding: 4% 0 0 0;
+  
+    }
     #div_grafico {
       width: 47%;
       background-color: white;
@@ -646,7 +1034,15 @@
       border-radius: 4px;
       padding: 0.5%;
     }
-    #myChart {
+    #div_grafico2 {
+      width: 50%;
+      background-color: white;
+      height: 70%;
+      border-radius: 4px;
+      margin-top: -4%;
+      display: none;
+    }
+    .grafico {
       width: 100%;
       height: 100%;
     }
@@ -721,8 +1117,9 @@
       border: 0;
     }
     #div_principal_minhas_historias {
-      width: 40%;
+      width: 45%;
       padding: 4%;
+      padding-bottom: 7%;
       display: none;
       flex-direction: center;
       justify-content: center;
@@ -762,6 +1159,7 @@
       left: 5%;
       bottom: 5%;
       font-size: 14px;
+      margin-bottom: 2%;
     }
     #div_titulo {
       flex-direction: row;
@@ -795,11 +1193,20 @@
     #h5_meio {
       margin: 0 15% 0 15%;
       width:100%;
-      text-align: justify;
+      text-align: left;
       overflow-y: scroll;
     }
     #input_classificacao1:active {
       background-image: url("estrela-amarelo.png");
+    }
+    #obsP {
+      margin-top: 3.5%; font-weight: 700; border-bottom: 2px solid white;
+    }
+    #obsP:hover {
+      cursor: pointer;
+      color: black;
+      border-bottom: 1px solid black;
+      transition: all 0.7s;
     }
   </style>
    <script defer src="index.js"></script>

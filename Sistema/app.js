@@ -15,6 +15,8 @@ var medidasRouter = require("./src/routes/medidas");//Criando variavel com todas
 var aquariosRouter = require("./src/routes/aquarios");//Criando variavel com todas as rotas
 var empresasRouter = require("./src/routes/empresas");//Criando variavel com todas as rotas
 var globalRouter = require("./src/routes/global");//Criando variavel com todas as rotas
+var quizRouter = require("./src/routes/quiz");//Criando variavel com todas as rotas
+var enqueteRouter = require("./src/routes/enquete");//Criando variavel com todas as rotas
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,6 +35,8 @@ app.use("/medidas", medidasRouter);//Aqui estou usando aquelas rotas e definindo
 app.use("/aquarios", aquariosRouter);//Aqui estou usando aquelas rotas e definindo as funções dela pela /
 app.use("/empresas", empresasRouter);//Aqui estou usando aquelas rotas e definindo as funções dela pela /
 app.use("/global", globalRouter);//Aqui estou usando aquelas rotas e definindo as funções dela pela /
+app.use("/quiz", quizRouter);//Aqui estou usando aquelas rotas e definindo as funções dela pela /
+app.use("/enquete", enqueteRouter);//Aqui estou usando aquelas rotas e definindo as funções dela pela /
 
 app.listen(PORTA, function () {//Aqui estou fazendo uma função para abrir o servidor
     console.log(`Servidor ativo na porta: ${PORTA}`);//Aqui a mensagem do servidor

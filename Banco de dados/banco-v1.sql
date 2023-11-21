@@ -1,8 +1,8 @@
+DROP DATABASE bd_Disney;
+
 CREATE DATABASE bd_Disney;
 
 USE bd_Disney;
-
-DROP DATABASE bd_Disney;
 
 CREATE TABLE Usuario (
 	idUsuario int primary key auto_increment,
@@ -17,16 +17,49 @@ select * from Historias;
 truncate Historias;
 
 CREATE TABLE Historias (
-	idHistorias int auto_increment,
+	idHistorias int auto_increment PRIMARY KEY,
     titulo varchar(100),
-    descricao varchar(2000),
+    descricao varchar(2500),
     classificacao int,
     fkUsuario int, 
-    PRIMARY KEY (idHistorias, fkUsuario),
     foreign key (fkUsuario) references Usuario(idUsuario)
 );
-INSERT INTO Historias VALUES (NULL, 'teste', 'teste', 1, 1);
-INSERT INTO Historias VALUES (NULL, 'Cinderela', 'A cinderela tem um pé tão pequeno', 5, 2);
-INSERT INTO Historias VALUES (NULL, 'Rei leao', 'O rei leao tem uma familia, sla', 4, 3);
+CREATE TABLE Quiz (
+	idQuiz int primary key auto_increment,
+    qtdPontos int,
+    fkUsuario int,
+    foreign key (fkUsuario) references Usuario(idUsuario)
+);
+CREATE TABLE enquete (
+	idEnquete int primary key auto_increment,
+    opcaoEscolhida varchar(50),
+    fkUsuario int, 
+    foreign key (fkUsuario) references Usuario(idUsuario)
+);
+SELECT opcaoEscolhida, COUNT(opcaoEscolhida) FROM enquete
+    GROUP BY opcaoEscolhida;
 
-select * from Usuario JOIN Historias on idUsuario = fkUsuario;
+INSERT INTO enquete VALUES (null, 'urso', 3);
+SELECT* FROM enquete;
+
+truncate table enquete;
+truncate table historias;
+
+SELECT * from Enquete JOIN Usuario ON fkUsuario = idUsuario; 
+
+SELECT opcaoEscolhida, fkUsuario FROM Enquete; 
+
+SELECT SUM(Quiz.qtdPontos), SUM(Quiz.qtdPontos) FROM Quiz;
+
+SELECT * FROM Quiz;
+
+INSERT INTO Quiz VALUES (NULL, 3, 1);
+
+SELECT SUM(qtdPontos) as soma FROM Quiz JOIN Usuario ON idUsuario = idUsuario;
+
+select * from Usuario JOIN Historias on idUsuario = fkUsuario 
+JOIN Quiz ON idQuiz;
+
+SELECT SUM(qtdPontos) FROM Quiz JOIN Usuario on idUsuario = fkUsuario where idQuiz = idUsuario;
+
+SELECT SUM(qtdPontos) FROM Quiz JOIN Usuario ON idUsuario = fkUsuario;
