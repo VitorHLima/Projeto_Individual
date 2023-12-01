@@ -30,7 +30,7 @@
           <iframe width="550" height="200" id="iframe_video" src="https://www.youtube.com/embed/videoseries?si=QqsAAIuCAdK76BpA&amp;list=PLE3QI0lc3cfEzUKSzYHgAHyDNphzfR878" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="header_links">
-          <a href="../inicial/index.html" style="margin-right:20%;">Pagina Inicial</a>
+          <a href="#" style="margin-right:30%;"></a>
       
           <a href="index.html" onclick="limparSessao()">SAIR</a>
         </div>
@@ -185,7 +185,7 @@
       <div id="div_quinto_sistema">
         <h1>ENQUETE</h1>
         <br /><br>
-        <h3 id="textoEnquete">Qual é o melhor filme de todos na sua opnião?</h3><br><br>
+        <h3 id="textoEnquete">Qual é o melhor filme de todos na sua opinião?</h3><br><br>
        <div id="div_principal_enquete">
         <div id="cima_enquete">
           <button class="button_resposta_enquete" onclick="Opcao('leao')" id="button_leao" style="margin-right: 1%;">Rei leão</button>
@@ -297,7 +297,7 @@
 
     var idUsuario = sessionStorage.ID_USUARIO
 
-    logo.innerHTML = sessionStorage.EMAIL_USUARIO; // Aqui estou pegando o id Logo que está no HTML, e pegando o email da sessão do usuario atraves da sessionStorage(função nativa do JavaScript)
+    logo.innerHTML = sessionStorage.NOME_USUARIO; // Aqui estou pegando o id Logo que está no HTML, e pegando o email da sessão do usuario atraves da sessionStorage(função nativa do JavaScript)
 
     document.addEventListener("DOMContentLoaded", function () { //Esssa é uma funcão que vai ser ativada quando carregar a pagina
       fetch('./global/buscar') //Aqui estou pegando a rota para minha requisição buscar os valores do banco 
@@ -334,7 +334,7 @@
             var totalPontos = data[i]['SUM(qtdPontos)'] || '';
             MostrarP.innerHTML = `${totalPontos}`;
         } else {
-            console.error('ERRO ao tentar buscar dados:', data);
+            console.error('ERRO ao tentar buscar dados do Quiz:', data);
         }
       }
     })
@@ -372,7 +372,7 @@
         },
         body: JSON.stringify({
             respostaServer: respostaEnquete
-        }), //Aqui é o tipo dos dados que vão mandar, transformou o objeto corpo lá em cima, por um JSON, que vai ser recebido com o body na pagina controller
+        }), //Aqui é o tipo dos dados que vão mandar, transformou o objeto em string lá em cima, por um JSON, que vai ser recebido com o body na pagina controller
     })
         .then(function (resposta) {// Aqui é ele vai tentar mandar os dados pegos lá em cima, com o parametro de resposta para pegar se é uma resposta postiviva ou negativa vindo do servidor
             console.log("resposta: ", resposta);//Aqui ele vai exibir a resposta do servidor
@@ -420,7 +420,7 @@
           if (resposta.ok) { //Se a resposta for ok, ele vai cadastrar a historia com sucesso
             alert("Historia cadastrada");//Vai exibir para o usuario o resultado positivo
             div_pop_up_historias.style.display = "none";//Aqui ele está tirando o pop-up para cadastro da historias
-            document.location.href = 'sistema.html'// Aqui está transferindo o usuario para outra pagina
+            document.location.href = 'index.html'// Aqui está transferindo o usuario para outra pagina
           } else if (resposta.status == 404) {//Se a resposta for o erro 404, que pode ser que o servidor caiu ou não funcionou a requisição
             window.alert("Deu 404!");//Aqui ele está exibindo um alerta na pagina, deu 404!
           } else {//Senão for o erro 404
@@ -468,6 +468,80 @@
     function Sair1() {//Função para sair de um pop-up
       div_pop_up_historias.style.display = "none";//Definindo o pop-up com o display none, para fechar
     }
+    
+     document.addEventListener("DOMContentLoaded", function () {
+  fetch(`./enquete/global`)
+  .then(response => response.json())
+  .then(data => {
+    const opcao = data.map(item => item['opcaoEscolhida']);
+    const valores = data.map(item => item['COUNT(opcaoEscolhida)']);
+    
+    const ctx2 = document.getElementById("myChart2");
+    
+    new Chart(ctx2, {
+      type: "doughnut",
+      backgroundColor: '#f9f7f7',
+      data: {
+        labels: opcao,
+        datasets: [
+          {
+            label: "Total de pontos",
+            data: valores,
+            backgroundColor: [
+              '#e6324b',
+              '#4180ab',
+              '#faba32',
+              '#9d4e0f',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+              '#e6324b',
+              '#4180ab',
+              '#faba32',
+              '#9d4e0f',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+              'rgb(201, 203, 207)'
+            ],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+            display:false,
+            grid: {
+              display: false
+              ,
+            },
+          },
+          y: {
+              display:false,
+            grid: {
+              display: false
+            },
+            ticks: {
+              precision: 0
+            },
+          },
+         },
+         plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 15,
+                    },
+                }
+            }
+        }
+            }
+    });
+  })
+  .catch(error => console.error('Erro ao buscar dados:', error));
+})
   </script>
   <script>
     const ctx = document.getElementById("myChart");//Criação do chartjs
@@ -529,82 +603,6 @@
       
     });
 
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-fetch(`./enquete/global`)
-  .then(response => response.json())
-  .then(data => {
-    const opcao = data.map(item => item['opcaoEscolhida']);
-    const valores = data.map(item => item['COUNT(opcaoEscolhida)']);
-    
-    const ctx2 = document.getElementById("myChart2");
-    
-    new Chart(ctx2, {
-      type: "doughnut",
-      backgroundColor: '#f9f7f7',
-      data: {
-        labels: opcao,
-        datasets: [
-          {
-            label: "Total de pontos",
-            data: valores,
-            backgroundColor: [
-              '#e6324b',
-              '#4180ab',
-              '#faba32',
-              '#9d4e0f',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-              '#e6324b',
-              '#4180ab',
-              '#faba32',
-              '#9d4e0f',
-              'rgb(54, 162, 235)',
-              'rgb(153, 102, 255)',
-              'rgb(201, 203, 207)'
-            ],
-            borderWidth: 2,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            display:false,
-            grid: {
-              display: false
-              ,
-            },
-          },
-          y: {
-              display:false,
-            grid: {
-              display: false
-            },
-            ticks: {
-              precision: 0
-            },
-          },
-         },
-         plugins: {
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 15,
-                    },
-                }
-            }
-        }
-            }
-    });
-  })
-  .catch(error => console.error('Erro ao buscar dados:', error));
-})
   </script>
   <style>
     #mostrar_pontos {
@@ -917,6 +915,12 @@ fetch(`./enquete/global`)
       color: white;
       margin-top: 4%;
     }
+    h1, h3, h2, h5, h4 {
+    font-weight: 900;
+    }
+    h1 {
+      font-weight: 900;
+    }
     #div_incial_sistema h1 {
       color: white;
       margin-top: 5%;
@@ -1200,13 +1204,14 @@ fetch(`./enquete/global`)
       background-image: url("estrela-amarelo.png");
     }
     #obsP {
-      margin-top: 3.5%; font-weight: 700; border-bottom: 2px solid white;
+      margin-top: 3.5%; font-weight: 900; border-bottom: 2px solid white;
     }
     #obsP:hover {
       cursor: pointer;
       color: black;
       border-bottom: 1px solid black;
       transition: all 0.7s;
+      font-weight: 100%
     }
   </style>
    <script defer src="index.js"></script>

@@ -39,15 +39,19 @@ CREATE TABLE enquete (
 SELECT opcaoEscolhida, COUNT(opcaoEscolhida) FROM enquete
     GROUP BY opcaoEscolhida;
 
-INSERT INTO enquete VALUES (null, 'urso', 3);
-SELECT* FROM enquete;
 
+INSERT INTO enquete VALUES (null, 'urso', 3);
+SELECT* FROM enquete; 
 truncate table enquete;
 truncate table historias;
 
 SELECT * from Enquete JOIN Usuario ON fkUsuario = idUsuario; 
 
 SELECT opcaoEscolhida, fkUsuario FROM Enquete; 
+
+SELECT * FROM Usuario JOIN Historias ON idUsuario = fkUsuario where Usuario.nickname = 'vitorhugo';
+
+DELETE FROM Usuario WHERE idUsuario = 6;
 
 SELECT SUM(Quiz.qtdPontos), SUM(Quiz.qtdPontos) FROM Quiz;
 
